@@ -18,6 +18,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import HeaderDashboard from './header-dashboard';
+import SiderbarDashboard from './siderbar-dasboard';
 // import { mainListItems, secondaryListItems } from './listItems';
 // import Chart from './Chart';
 // import Deposits from './Deposits';
@@ -79,30 +80,8 @@ function DashboardContent() {
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
        <HeaderDashboard open={open} toggleDrawer={toggleDrawer}/>
-        <Drawer variant="permanent" open={open}>
-          <Toolbar
-           style={{textAlign:'right'}}
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-            //   justifyContent: 'flex-end',
-              px: [1],
+       <SiderbarDashboard  open={open} toggleDrawer={toggleDrawer}/>
 
-            }}
-
-          >
-              <h3>Cupboard</h3>
-            <IconButton onClick={toggleDrawer} style={{  display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'flex-end'}}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </Toolbar>
-          <Divider />
-          {/* <List>{mainListItems}</List>
-          <Divider />
-          <List>{secondaryListItems}</List> */}
-        </Drawer>
         <Box
           component="main"
           sx={{
@@ -118,38 +97,7 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  {/* <Chart /> */}
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  {/* <Deposits /> */}
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  {/* <Orders /> */}
-                </Paper>
-              </Grid>
+    
             </Grid>
             <Copyright sx={{ pt: 4 }} />
           </Container>
